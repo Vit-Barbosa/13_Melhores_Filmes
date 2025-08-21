@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 Melhores Filmes de Vampiros</title>
+
+<style>
+
+/* Importação de fontes góticas do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-color: #000; /* Fundo preto */
+    color: #E0E0E0; /* Cor do texto principal (um cinza claro, quase branco antigo) */
+    font-family: 'Playfair Display', serif; /* Fonte clássica para o corpo */
+    margin: 0;
+    padding: 0;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas para leitura */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="#000" /><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="#222" stroke-width="0.5"/></svg>'); /* Textura sutil escura */
+    background-repeat: repeat;
+}
+
+header {
+    background-color: #1a1a1a; /* Um preto um pouco mais claro para o cabeçalho */
+    color: #8B0000; /* Vermelho Sangue */
+    padding: 30px 0; /* Mais padding para um visual mais imponente */
+    text-align: center;
+    border-bottom: 3px solid #4B0000; /* Linha de destaque em vermelho escuro */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7); /* Sombra mais dramática */
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', serif; /* Fonte ornamental para o título principal */
+    color: #8B0000; /* Vermelho escuro para o título principal */
+    font-size: 3.5em; /* Tamanho maior para o título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra para profundidade */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Cinzel Decorative', serif; /* Fonte ornamental para subtítulos */
+    color: #A52A2A; /* Um vermelho amarronzado para subtítulos */
+    font-size: 2.2em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h2::before,
+h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    height: 1px;
+    background-color: #A52A2A;
+    transform: translateY(-50%);
+}
+
+h2::before {
+    left: 0;
+}
+
+h2::after {
+    right: 0;
+}
+
+
+main {
+    padding: 40px; /* Mais padding para espaço */
+    max-width: 1000px; /* Largura um pouco maior */
+    margin: 40px auto;
+    background-color: #121212; /* Um preto um pouco mais claro para o conteúdo principal */
+    border: 1px solid #333; /* Borda sutil */
+    border-radius: 10px; /* Bordas levemente arredondadas */
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.6); /* Sombra mais dramática e avermelhada */
+    padding-top: 20px; /* Ajuste para o padding superior */
+}
+
+.movie-list ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0;
+}
+
+.movie-list li {
+    background-color: #1B1B1B; /* Fundo para cada item da lista de filmes */
+    margin-bottom: 25px; /* Mais espaço entre os itens */
+    padding: 20px;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transição mais suave e longa */
+    display: flex; /* Para alinhar imagem e texto */
+    align-items: flex-start; /* Alinha o conteúdo no topo do item */
+    gap: 20px; /* Espaço entre as imagens e o texto */
+    overflow: hidden; /* Garante que os pseudo-elementos não transbordem */
+}
+
+.movie-list li::before,
+.movie-list li::after {
+    content: '';
+    position: absolute;
+    width: 98%;
+    height: 96%;
+    top: 1%;
+    left: 1%;
+    pointer-events: none; /* Garante que não interfira com cliques */
+    border-radius: 8px;
+    box-sizing: border-box; /* Inclui padding e borda na largura/altura */
+}
+
+.movie-list li::before {
+    transform: scale(0.98) rotate(0.5deg); /* Leve desalinhamento para efeito antigo */
+}
+
+.movie-list li::after {
+    transform: scale(1.02) rotate(-0.5deg); /* Leve desalinhamento para efeito antigo */
+}
+
+
+.movie-list li:hover {
+    transform: translateY(-8px) scale(1.01); /* Efeito de "levantar" mais pronunciado e leve aumento */
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.8); /* Sombra mais intensa e avermelhada */
+    background-color: #280000; /* Um fundo mais escuro e avermelhado no hover */
+}
+
+.movie-list li img {
+    border: 1px solid #4B0000; /* Borda para as imagens */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para as imagens */
+    border-radius: 3px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.movie-list li img:first-of-type { /* Estilo para a primeira imagem (poster) */
+    width: 150px; /* Largura fixa para o poster */
+    height: 225px; /* Proporção de poster */
+}
+
+.movie-list li img:last-of-type { /* Estilo para a segunda imagem (cena) */
+    width: 250px; /* Largura maior para a cena */
+    height: 150px; /* Proporção de cena */
+}
+
+
+.movie-details {
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+.movie-list h3 {
+    font-family: 'Cinzel Decorative', serif; /* Fonte ornamental para o título do filme */
+    color: #FF6347; /* Vermelho tomate mais vibrante para o título do filme */
+    font-size: 1.8em; /* Tamanho maior */
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left; /* Alinha o título do filme à esquerda */
+    border-bottom: 1px dashed #5C0000; /* Linha pontilhada sutil */
+    padding-bottom: 5px;
+}
+
+.movie-list p {
+    color: #C0C0C0; /* Cor do texto da descrição do filme (cinza mais claro) */
+    text-align: left; /* Alinha o parágrafo à esquerda */
+    font-size: 1.05em; /* Levemente maior */
+}
+
+footer {
+    text-align: center;
+    padding: 25px; /* Mais padding */
+    margin-top: 50px; /* Mais margem superior */
+    background-color: #1a1a1a;
+    color: #8B0000; /* Cor do rodapé em vermelho escuro */
+    border-top: 3px solid #4B0000; /* Borda mais forte */
+    font-size: 0.9em;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+
+</style>
+
+</head>
+
+<body>
+    <header>
+        <h1>13 Melhores Filmes de Vampiros</h1>
+    </header>
+
+    <main>
+        <section class="movie-list">
+            <h2>Nossa Seleção Sombria</h2>
+            <ul>
+                <li>
+                    <img src="imagens/1.SINNERS.jpg" alt="Pôster de Sinners (2025)" width="200">
+                    <img src="imagens/1.1.SINNERS.jpg" alt="Pôster de Sinners (2025)" width="400">
+                    <h3>Sinners (2025)</h3>
+                    <p>Dispostos a deixar suas vidas conturbadas para trás, irmãos gêmeos retornam à cidade natal para recomeçar suas vidas do zero, quando descobrem que um mal ainda maior está à espera deles para recebê-los de volta.</p>
+                </li>
+                <li>
+                    <img src="imagens/2.NOSFERATU_2024.jpg" alt="Pôster de Nosferatu (2024)" width="200">
+                    <img src="imagens/2.1.NOSFERATU_2024.jpg" alt="Pôster de Nosferatu (2024)" width="400">
+                    <h3>Nosferatu (2024)</h3>
+                    <p>Uma jovem noiva é deixada sob os cuidados de amigos quando seu marido viaja para a Transilvânia para um encontro com o Conde Orlok. Atormentada por visões terríveis e uma crescente sensação de pavor, ela logo encontra uma força maligna que está muito além de sua compreensão.</p>
+                </li>
+                <li>
+                    <img src="imagens/3.RENFIELD.jpg" alt="Pôster de Renfield (2023)" width="200">
+                    <img src="imagens/3.1.RENFIELD.jpg" alt="Pôster de Renfield (2023)" width="400">
+                    <h3>Renfield (2023)</h3>
+                    <p>Renfield, o torturado ajudante de Drácula, é forçado a capturar presas para seu mestre e cumprir todas as suas ordens. Mas agora, após séculos de servidão, Renfield está pronto para ver se há uma vida fora da sombra de seu chefe.</p>
+                </li>
+                <li>
+                    <img src="imagens/4.THE INVITATION.jpg" alt="Pôster de The Invitation (2022)" width="200">
+                    <img src="imagens/4.1.THE INVITATION.jpg" alt="Pôster de The Invitation (2022)" width="400">
+                    <h3>The Invitation (2022)</h3>
+                    <p>Após um teste de DNA, Evie tem notícias de um primo distante e, melhor ainda, recebe um convite para um casamento luxuoso no campo. No entanto, pouco depois de chegar, Evie descobre a terrível verdade por trás do evento.</p>
+                </li>
+                <li>
+                    <img src="imagens/5.WHAT WE DO IN THE SHADOWS.jpg" alt="Pôster de What We Do in the Shadows (2014)" width="200">
+                    <img src="imagens/5.1.WHAT WE DO IN THE SHADOWS.jpg" alt="Pôster de What We Do in the Shadows (2014)" width="400">
+                    <h3>What We Do in the Shadows (2014)</h3>
+                    <p>Protegidos por crucifixos, um grupo de cineastas entra com suas câmeras para registrar a intimidade de quatro imortais que compartilham o lar em um subúrbio da Nova Zelândia. Enquanto eles lidam com os conflitos naturais da convivência, eles tentam se manter atualizados tanto com a vida moderna como com todo o século passado.</p>
+                </li>
+                <li>
+                    <img src="imagens/6.TWILIGHT.jpg" alt="Pôster de Twilight (2008)" width="200">
+                    <img src="imagens/6.1.TWILIGHT.jpg" alt="Pôster de Twilight (2008)" width="400">
+                    <h3>Twilight (2008)</h3>
+                    <p>Quando Bella Swan se muda para uma pequena cidade no Noroeste Pacífico dos Estados Unidos, ela se apaixona por Edward Cullen, um misterioso colega de classe que se revela um vampiro.</p>
+                </li>
+                <li>
+                    <img src="imagens/7.VAN HELSING.jpg" alt="Pôster de Van Helsing (2004)" width="200">
+                    <img src="imagens/7.1.VAN HELSING.jpg" alt="Pôster de Van Helsing (2004)" width="400">
+                    <h3>Van Helsing (2004)</h3>
+                    <p>Um notório caçador de monstros é enviado para a Transilvânia para prender o Conde Drácula, que está usando a pesquisa do Doctor Frankenstein e um lobisomem para um propósito sinistro.</p>
+                </li>
+                <li>
+                    <img src="imagens/8.BLADE.jpg" alt="Pôster de Blade (1998)" width="200">
+                    <img src="imagens/8.1.BLADE.jpg" alt="Pôster de Blade (1998)" width="400">
+                    <h3>Blade (1998)</h3>
+                    <p>O herói Blade, metade mortal e metade imortal, parte em busca do vampiro responsável pela morte de sua mãe. Blade quer eliminá-lo do mundo dos vampiros e em um mundo tecnologicamente avançado, Blade lutará para capturar aquele que quer destruir a vida humana.</p>
+                </li>
+                <li>
+                    <img src="imagens/9.INTERVIEW WITH THE VAMPIRE.jpg" alt="Pôster de Interview With the Vampire (1994)" width="200">
+                    <img src="imagens/9.1.INTERVIEW WITH THE VAMPIRE.jpg" alt="Pôster de Interview With the Vampire (1994)" width="400">
+                    <h3>Interview with the Vampire (1994)</h3>
+                    <p>Um jornalista biógrafo entrevista um jovem que afirma ser vampiro. Louis de Pointe du Lac, um homem que perdeu tudo, narra suas experiências dos últimos 200 anos e reconta seu encontro com Lestat de Lioncourt, uma criatura da noite.</p>
+                </li>
+                <li>
+                    <img src="imagens/10.BRAM STOKER'S DRACULA.jpg" alt="Pôster de Bram Stoker's Dracula (1992)" width="200">
+                    <img src="imagens/10.1.BRAM STOKER'S DRACULA.jpg" alt="Pôster de Bram Stoker's Dracula (1992)" width="400">
+                    <h3>Bram Stoker's Dracula (1992)</h3>
+                    <p>O vampiro centenário Conde Drácula vai para a Inglaterra seduzir Mina Murray, a noiva do seu advogado Jonathan Harker, e causar estragos em terra estrangeira.</p>
+                </li>
+                <li>
+                    <img src="imagens/11.THE LOST BOYS.jpg" alt="Pôster de The Lost Boys (1987)" width="200">
+                    <img src="imagens/11.1.THE LOST BOYS.jpg" alt="Pôster de The Lost Boys (1987)" width="400">
+                    <h3>The Lost Boys (1987)</h3>
+                    <p>Depois de se mudar para uma nova cidade, os irmãos Sam e Michael descobrem que a área é um refúgio para vampiros. Sam tem que trabalhar rápido, pois Michael está se apaixonando por uma destas criaturas e está gradualmente se tornando um deles.</p>
+                </li>
+                <li>
+                    <img src="imagens/12.FRIGHT NIGHT.jpg" alt="Pôster de Fright Night (1985)" width="200">
+                    <img src="imagens/12.1.FRIGHT NIGHT.jpg" alt="Pôster de Fright Night (1985)" width="400">
+                    <h3>Fright Night (1985)</h3>
+                    <p>Charley Brewster, um jovem apaixonado por filmes de terror, começa a acreditar que seu novo vizinho, Jerry Dandridge, é um vampiro. O rapaz procura o apresentador de programas de terror na TV Peter Vincent para ajudá-lo.</p>
+                </li>
+                <li>
+                    <img src="imagens/13.NOSFERATU_1922.jpg" alt="Pôster de Nosferatu (1922)" width="200">
+                    <img src="imagens/13.1.NOSFERATU_1922.jpg" alt="Pôster de Nosferatu (1922)" width="400">
+                    <h3>Nosferatu (1922)</h3>
+                    <p>O corretor de imóveis Hutter precisa vender um castelo cujo proprietário é o excêntrico conde Orlock. O conde, na verdade, é um vampiro milenar que espalha o terror na região de Bremen, na Alemanha e se interessa por Ellen, a mulher de Hutter.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Filmes de Vampiros. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
